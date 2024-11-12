@@ -1,5 +1,5 @@
 {
-  "name": "htf-2023-vue",
+  "name": "htf-vue",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "htf-2023-component": "github:CollideNV/htf-2023-component",
+    "htf-component": "github:CollideNV/htf-component",
     "vue": "^3.2.41"
   },
   "devDependencies": {

@@ -2,6 +2,6 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import './assets/main.css'
-import "htf-2023-component";
+import "htf-component";
 
 createApp(App).mount('#app')
