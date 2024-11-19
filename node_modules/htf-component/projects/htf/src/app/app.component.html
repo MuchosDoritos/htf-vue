@@ -1,0 +1,33 @@
+<ul *ngIf="quest">
+  <li
+    class="problem"
+    *ngFor="let problem of quest.problems"
+    [ngClass]="{ solved: problem.solved }"
+  >
+    <h1 class="problem-name">{{ problem.name }}</h1>
+    <p class="description">{{ problem.description }}</p>
+    <ol>
+      <li
+        *ngFor="let tool of problem.tools"
+        [ngClass]="{ solved: tool.solved }"
+        (click)="activate(tool.id)"
+        [ngClass]="{ active: activeTool == tool.id }"
+        class="tool"
+      >
+        <h2 class="tool-name">{{ tool.name }}</h2>
+        <p class="effect">{{ tool.effect }}</p>
+        <div class="challenge">
+          <p class="recipe">{{ tool.recipe }}</p>
+          <p class="ingredients">{{ tool.ingredients }}</p>
+          <div class="remainingAttempts">{{ tool.remainingAttempts }}</div>
+          <div class="difficulty">{{ tool.difficulty }}</div>
+          <div *ngIf="activeTool == tool.id">
+            <input class="answer" *ngIf="!url" [(ngModel)]="answer" />
+            <div>{{tool.id}}</div>
+            <button (click)="useTool(tool);$event.stopPropagation()">Use Tool</button>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </li>
+</ul>
